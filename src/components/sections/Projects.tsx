@@ -134,6 +134,22 @@ export function Projects() {
                       ? "National News Media"
                       : project.slug === "news-portal"
                       ? "Media & Live Sports"
+                      : project.slug === "promise-footwear"
+                      ? "Manufacturing & Export"
+                      : project.slug === "promise-agro"
+                      ? "Agro & FMCG Supply"
+                      : project.slug === "learnwell-academy"
+                      ? "EdTech Academy"
+                      : project.slug === "moral-learning-institute"
+                      ? "Professional Education"
+                      : project.slug === "click-the-photo"
+                      ? "Creative Media Studio"
+                      : project.slug === "photo-fixa"
+                      ? "Image Retouching SaaS"
+                      : project.slug === "doinik-barta"
+                      ? "National Vernacular Press"
+                      : project.slug === "asia-post"
+                      ? "Geopolitical Affairs"
                       : project.category}
                   </span>
                   <span className="font-mono text-xs text-ink/40">

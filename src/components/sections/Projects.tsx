@@ -93,12 +93,31 @@ export function Projects() {
                 </div>
 
                 <div className="lg:col-span-7">
-                  <BrowserFrame
-                    title="Promise ERP Operational Suite"
-                    url="erp.promisegroup.net/dashboard"
-                    image={erpProject.image}
-                    aspect="wide"
-                  />
+                  {erpProject.url ? (
+                    <a
+                      href={erpProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block overflow-hidden rounded-2xl group/thumb focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      aria-label="View Promise ERP Interactive Prototype"
+                    >
+                      <BrowserFrame
+                        title="Promise ERP Operational Suite"
+                        url="erp.promisegroup.net/dashboard"
+                        image={erpProject.image}
+                        aspect="wide"
+                        frameless
+                      />
+                    </a>
+                  ) : (
+                    <BrowserFrame
+                      title="Promise ERP Operational Suite"
+                      url="erp.promisegroup.net/dashboard"
+                      image={erpProject.image}
+                      aspect="wide"
+                      frameless
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -113,12 +132,31 @@ export function Projects() {
               className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 transition-all duration-300 hover:border-accent hover:-translate-y-1.5 hover:shadow-[0_0_35px_-5px_rgba(34,197,94,0.35),0_0_15px_-5px_rgba(31,138,87,0.3)] lg:col-span-6"
             >
               <div className="space-y-4">
-                <BrowserFrame
-                  title={project.name}
-                  url={project.url ? project.url : `${project.slug}.promise.internal`}
-                  image={project.image}
-                  aspect="video"
-                />
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block overflow-hidden rounded-2xl group/thumb focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    aria-label={`View ${project.name}`}
+                  >
+                    <BrowserFrame
+                      title={project.name}
+                      url={project.url}
+                      image={project.image}
+                      aspect="video"
+                      frameless
+                    />
+                  </a>
+                ) : (
+                  <BrowserFrame
+                    title={project.name}
+                    url={`${project.slug}.promise.internal`}
+                    image={project.image}
+                    aspect="video"
+                    frameless
+                  />
+                )}
 
                 <div className="flex items-center justify-between pt-2">
                   <span className="rounded-md border border-white/[0.08] bg-bg px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent shadow-[0_0_6px_rgba(34,197,94,0.2)]">

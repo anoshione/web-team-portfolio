@@ -116,13 +116,13 @@ export function Cursor() {
       {/* 10px Center Dot */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_10px_#22c55e,0_0_18px_#1F8A57]"
+        className="fixed top-0 left-0 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent"
       />
 
       {/* 36px Trailing Ring */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-accent/70 shadow-[0_0_20px_rgba(34,197,94,0.35)] backdrop-blur-[1px] transition-[width,height,background-color] will-change-transform"
+        className="fixed top-0 left-0 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-accent/60 backdrop-blur-[1px] transition-[width,height,background-color] will-change-transform"
       >
         <span
           ref={labelRef}

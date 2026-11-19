@@ -46,7 +46,7 @@ export function CtaBannerAnimation({ children }: CtaBannerAnimationProps) {
   return (
     <div
       ref={bannerRef}
-      className="relative overflow-hidden bg-accent px-8 py-16 sm:px-12 sm:py-20 lg:p-24 shadow-[0_0_60px_-10px_rgba(31,138,87,0.7),0_0_25px_rgba(34,197,94,0.35)] will-change-transform"
+      className="relative overflow-hidden bg-accent px-8 py-16 sm:px-12 sm:py-20 lg:p-24 shadow-2xl will-change-transform"
       style={{ borderRadius: "48px" }}
     >
       {children}

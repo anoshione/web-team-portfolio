@@ -11,7 +11,7 @@ import { ParticleFlow } from "@/components/animation/ParticleFlow";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-14 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-[75px]">
+    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36">
       {/* 3D Animated Particle Flow - Reversed Trumpet Shape Confined to Hero */}
       <ParticleFlow />
 
@@ -41,7 +41,7 @@ export function Hero() {
               {/* Masked line reveal on H1 */}
               <SplitReveal
                 as="h1"
-                className="font-display text-[28px] font-extrabold tracking-tight text-ink sm:text-[40px] md:text-[52px] lg:text-[56px] lg:leading-[1.12]"
+                className="font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.08]"
               >
                 We build the software and digital presence your business grows on.
               </SplitReveal>
@@ -82,12 +82,6 @@ export function Hero() {
 
             {/* Right Column: Stacked, Offset BrowserFrames with ample top clearance (no cropping) */}
             <div className="relative lg:col-span-5 flex justify-center lg:justify-end">
-              {/* Vibrant neon backlight behind hero mockups */}
-              <div
-                className="ambient-neon-glow -top-8 -right-8 h-80 w-80 sm:h-96 sm:w-96 opacity-70"
-                aria-hidden="true"
-              />
-
               <div className="hero-mockup-stack relative w-full max-w-lg lg:max-w-none pt-8 sm:pt-12">
                 {/* Back Mockup: Positioned within top clearance */}
                 <Parallax

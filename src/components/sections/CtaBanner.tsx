@@ -9,18 +9,13 @@ export function CtaBanner() {
   const mailtoAddress = siteConfig.contact.email.replace(/[\[\]]/g, "");
 
   return (
-    <section id="contact" className="relative py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
-      {/* Ambient neon aura behind CTA section */}
-      <div
-        className="ambient-neon-glow -top-32 left-1/2 -translate-x-1/2 h-[450px] w-[750px] opacity-45"
-        aria-hidden="true"
-      />
-      <Container className="relative z-10">
+    <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+      <Container>
         {/* Full-width rounded block with green accent - Expanding container animation */}
         <CtaBannerAnimation>
           {/* Subtle inner grid accent */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-15 bg-[radial-gradient(ellipse_at_top_right,white_0%,transparent_70%)]"
+            className="pointer-events-none absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,white_0%,transparent_70%)]"
             aria-hidden="true"
           />
 
@@ -34,7 +29,7 @@ export function CtaBanner() {
             {/* Masked line reveal */}
             <SplitReveal
               as="h2"
-              className="mt-4 font-display text-[22px] font-extrabold tracking-tight text-ink sm:text-[28px] lg:text-[40px]"
+              className="mt-4 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl"
             >
               Let&apos;s talk about your next digital project.
             </SplitReveal>

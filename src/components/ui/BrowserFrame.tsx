@@ -8,7 +8,6 @@ export interface BrowserFrameProps {
   aspect?: "video" | "auto" | "wide";
   className?: string;
   variant?: "default" | "compact";
-  frameless?: boolean;
 }
 
 export function BrowserFrame({
@@ -18,7 +17,6 @@ export function BrowserFrame({
   aspect = "video",
   className,
   variant = "default",
-  frameless = false,
 }: BrowserFrameProps) {
   // Clean up URL for display
   const displayUrl = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
@@ -26,51 +24,49 @@ export function BrowserFrame({
   return (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-2xl transition-all duration-300 hover:border-accent hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.35),0_0_12px_-2px_rgba(31,138,87,0.3)]",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-2xl transition-all duration-300 hover:border-accent/40",
         className
       )}
     >
       <div className="browser-frame-inner flex flex-col h-full w-full origin-center will-change-transform transition-transform duration-300 group-hover:scale-[1.02]">
-        {/* Browser Chrome Header - hidden when frameless */}
-        {!frameless && (
-          <div className="flex h-10 w-full items-center justify-between border-b border-white/[0.08] bg-bg/70 px-4 backdrop-blur-sm">
-            {/* Three dots / Window controls */}
-            <div className="flex items-center gap-1.5" aria-hidden="true">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
-            </div>
-
-            {/* URL Bar */}
-            <div className="mx-2 flex max-w-[280px] flex-1 items-center justify-center rounded-md border border-white/[0.06] bg-surface/90 px-3 py-1 font-mono text-[11px] text-ink/50 sm:max-w-xs">
-              <svg
-                className="mr-1.5 h-3 w-3 text-accent shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                />
-              </svg>
-              <span className="truncate">{displayUrl}</span>
-            </div>
-
-            {/* Right action / status indicator */}
-            <div className="flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#22c55e,0_0_14px_#1F8A57]" />
-              <span className="hidden font-mono text-[10px] uppercase tracking-wider text-ink/40 sm:inline">
-                Active
-              </span>
-            </div>
+        {/* Browser Chrome Header */}
+        <div className="flex h-10 w-full items-center justify-between border-b border-white/[0.08] bg-bg/70 px-4 backdrop-blur-sm">
+          {/* Three dots / Window controls */}
+          <div className="flex items-center gap-1.5" aria-hidden="true">
+            <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
           </div>
-        )}
 
-        {/* Browser Window Body / Full-size Thumbnail */}
+          {/* URL Bar */}
+          <div className="mx-2 flex max-w-[280px] flex-1 items-center justify-center rounded-md border border-white/[0.06] bg-surface/90 px-3 py-1 font-mono text-[11px] text-ink/50 sm:max-w-xs">
+            <svg
+              className="mr-1.5 h-3 w-3 text-accent shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+              />
+            </svg>
+            <span className="truncate">{displayUrl}</span>
+          </div>
+
+          {/* Right action / status indicator */}
+          <div className="flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="hidden font-mono text-[10px] uppercase tracking-wider text-ink/40 sm:inline">
+              Active
+            </span>
+          </div>
+        </div>
+
+        {/* Browser Window Body */}
         <div
           className={cn(
             "relative w-full overflow-hidden bg-bg/50",
@@ -81,17 +77,13 @@ export function BrowserFrame({
         >
           {/* REPLACE WITH REAL IMAGE: pass image prop (e.g. image="/screenshots/project.webp") */}
           {image ? (
-            <>
-              <Image
-                src={image}
-                alt={title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-              />
-              {/* Subtle protective bottom vignette */}
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-40 transition-opacity duration-300 group-hover:opacity-10" />
-            </>
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover object-top"
+            />
           ) : (
             /* Abstract Dashboard Skeleton */
             <div

@@ -12,13 +12,8 @@ export function Projects() {
   const otherProjects = featuredProjects.filter((p) => p.slug !== "promise-erp");
 
   return (
-    <section id="projects" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
-      {/* Ambient neon aura */}
-      <div
-        className="ambient-neon-glow -bottom-40 -left-40 h-[600px] w-[600px] opacity-35"
-        aria-hidden="true"
-      />
-      <Container className="relative z-10">
+    <section id="projects" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
+      <Container>
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">03 / SELECTED WORK</SectionLabel>
@@ -26,7 +21,7 @@ export function Projects() {
           {/* Masked line reveal */}
           <SplitReveal
             as="h2"
-            className="font-display text-[22px] font-bold tracking-tight text-ink sm:text-[28px] lg:text-[40px]"
+            className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl"
           >
             Systems we have built and run.
           </SplitReveal>
@@ -39,12 +34,12 @@ export function Projects() {
             <div
               data-project-tile
               data-spotlight
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 md:p-10 transition-all duration-300 hover:border-accent hover:-translate-y-1.5 hover:shadow-[0_0_40px_-5px_rgba(34,197,94,0.35),0_0_20px_-5px_rgba(31,138,87,0.35)] lg:col-span-12"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 md:p-10 transition-all duration-300 hover:border-accent hover:-translate-y-1.5 hover:shadow-2xl lg:col-span-12"
             >
               <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
                 <div className="lg:col-span-5 space-y-4">
                   <div className="flex items-center gap-2">
-                    <span className="rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-accent shadow-[0_0_8px_rgba(34,197,94,0.25)]">
+                    <span className="rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-accent">
                       Enterprise Resource Planning
                     </span>
                     <span className="font-mono text-xs text-ink/40">
@@ -52,7 +47,7 @@ export function Projects() {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-[16px] font-bold tracking-tight text-ink sm:text-[22px] md:text-[28px]">
+                  <h3 className="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl md:text-4xl">
                     {erpProject.name}
                   </h3>
 
@@ -93,31 +88,12 @@ export function Projects() {
                 </div>
 
                 <div className="lg:col-span-7">
-                  {erpProject.url ? (
-                    <a
-                      href={erpProject.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block overflow-hidden rounded-2xl group/thumb focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                      aria-label="View Promise ERP Interactive Prototype"
-                    >
-                      <BrowserFrame
-                        title="Promise ERP Operational Suite"
-                        url="erp.promisegroup.net/dashboard"
-                        image={erpProject.image}
-                        aspect="wide"
-                        frameless
-                      />
-                    </a>
-                  ) : (
-                    <BrowserFrame
-                      title="Promise ERP Operational Suite"
-                      url="erp.promisegroup.net/dashboard"
-                      image={erpProject.image}
-                      aspect="wide"
-                      frameless
-                    />
-                  )}
+                  <BrowserFrame
+                    title="Promise ERP Operational Suite"
+                    url="erp.promisegroup.net/dashboard"
+                    image={erpProject.image}
+                    aspect="wide"
+                  />
                 </div>
               </div>
             </div>
@@ -129,37 +105,18 @@ export function Projects() {
               key={project.slug}
               data-project-tile
               data-spotlight
-              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 transition-all duration-300 hover:border-accent hover:-translate-y-1.5 hover:shadow-[0_0_35px_-5px_rgba(34,197,94,0.35),0_0_15px_-5px_rgba(31,138,87,0.3)] lg:col-span-6"
+              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 transition-all duration-300 hover:border-accent hover:-translate-y-1.5 hover:shadow-2xl lg:col-span-6"
             >
               <div className="space-y-4">
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block overflow-hidden rounded-2xl group/thumb focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                    aria-label={`View ${project.name}`}
-                  >
-                    <BrowserFrame
-                      title={project.name}
-                      url={project.url}
-                      image={project.image}
-                      aspect="video"
-                      frameless
-                    />
-                  </a>
-                ) : (
-                  <BrowserFrame
-                    title={project.name}
-                    url={`${project.slug}.promise.internal`}
-                    image={project.image}
-                    aspect="video"
-                    frameless
-                  />
-                )}
+                <BrowserFrame
+                  title={project.name}
+                  url={project.url ? project.url : `${project.slug}.promise.internal`}
+                  image={project.image}
+                  aspect="video"
+                />
 
                 <div className="flex items-center justify-between pt-2">
-                  <span className="rounded-md border border-white/[0.08] bg-bg px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent shadow-[0_0_6px_rgba(34,197,94,0.2)]">
+                  <span className="rounded-md border border-white/[0.08] bg-bg px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
                     {project.slug === "promise-crm" && "Sales & Relationship"}
                     {project.slug === "promise-mart" && "E-commerce"}
                     {project.slug === "promise-hotel-resort" && "Hospitality Management"}
@@ -171,7 +128,7 @@ export function Projects() {
                   </span>
                 </div>
 
-                <h3 className="font-display text-[14px] font-bold tracking-tight text-ink sm:text-[18px]">
+                <h3 className="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">
                   {project.name}
                 </h3>
 

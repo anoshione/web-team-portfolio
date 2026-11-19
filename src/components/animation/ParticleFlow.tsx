@@ -138,7 +138,7 @@ export function ParticleFlow() {
         0
       );
       colGlow.addColorStop(0, "rgba(31, 138, 87, 0)");
-      colGlow.addColorStop(0.5, "rgba(34, 197, 94, 0.16)");
+      colGlow.addColorStop(0.5, "rgba(31, 138, 87, 0.08)");
       colGlow.addColorStop(1, "rgba(31, 138, 87, 0)");
       ctx.fillStyle = colGlow;
       ctx.fillRect(centerX - columnRadius * 2.5, 0, columnRadius * 5, height);

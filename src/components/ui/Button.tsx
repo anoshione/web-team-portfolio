@@ -27,9 +27,9 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     const variantStyles = {
       primary:
-        "bg-accent text-ink border border-accent/80 shadow-[0_0_20px_rgba(31,138,87,0.45)] hover:border-accent hover:shadow-[0_0_35px_rgba(34,197,94,0.7),0_0_15px_rgba(31,138,87,0.9)] before:absolute before:inset-0 before:z-[-1] before:bg-white/10 before:origin-bottom before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-350 before:ease-out",
+        "bg-accent text-ink border border-accent hover:border-accent/80 hover:shadow-lg hover:shadow-accent/20 before:absolute before:inset-0 before:z-[-1] before:bg-white/10 before:origin-bottom before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-350 before:ease-out",
       outline:
-        "border border-white/[0.08] bg-surface text-ink hover:border-accent hover:shadow-[0_0_20px_rgba(31,138,87,0.35)] hover:text-ink before:absolute before:inset-0 before:z-[-1] before:bg-white/[0.06] before:origin-bottom before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-350 before:ease-out",
+        "border border-white/[0.08] bg-surface text-ink hover:border-accent hover:text-ink before:absolute before:inset-0 before:z-[-1] before:bg-white/[0.06] before:origin-bottom before:scale-y-0 hover:before:scale-y-100 before:transition-transform before:duration-350 before:ease-out",
       ghost:
         "text-ink/80 hover:text-ink hover:bg-white/[0.04]",
     };

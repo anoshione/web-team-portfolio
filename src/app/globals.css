@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0A0D0B;
+  --color-surface: #101512;
+  --color-accent: #1F8A57;
+  --color-ink: #EEF2EF;
+  --font-display: var(--font-sora), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --bg: #0A0D0B;
+  --surface: #101512;
+  --accent: #1F8A57;
+  --ink: #EEF2EF;
+  --border: rgba(255, 255, 255, 0.08);
+  --muted: rgba(238, 242, 239, 0.62);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Accessible visible focus states */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1F8A57 !important;
+  outline-offset: 3px !important;
+}
+
+/* Faint CSS-only technical grid for hero background */
+.hero-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Soft accent glow */
+.hero-glow {
+  background: radial-gradient(circle 500px at 75% 35%, rgba(31, 138, 87, 0.14), transparent 70%);
+}
+
+/* FOUC prevention: hide [data-reveal] ONLY under html.js when motion is allowed */
+@media not (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  html.js [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

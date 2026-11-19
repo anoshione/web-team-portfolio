@@ -56,7 +56,7 @@ export const siteConfig: SiteConfig = {
     { label: "Group", href: "#group" },
   ],
   contact: {
-    email: "info@e-laeltd.com",
+    email: "dev@e-laeltd.com",
     phone: "+880 1550-666900",
     address: "Khaja IT Park, 2nd to 7th Floor, Kallyanpur Bus Stop, Mirpur Road, Dhaka-1207, Bangladesh",
   },

@@ -8,7 +8,7 @@ import { Reveal } from "@/components/animation/Reveal";
 
 export function WhoWeAre() {
   return (
-    <section id="who-we-are" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+    <section id="who-we-are" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
       {/* Ambient neon aura */}
       <div
         className="ambient-neon-glow -bottom-32 -left-32 h-96 w-96 opacity-40"

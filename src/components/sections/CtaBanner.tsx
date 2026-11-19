@@ -9,7 +9,7 @@ export function CtaBanner() {
   const mailtoAddress = siteConfig.contact.email.replace(/[\[\]]/g, "");
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+    <section id="contact" className="relative py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
       {/* Ambient neon aura behind CTA section */}
       <div
         className="ambient-neon-glow -top-32 left-1/2 -translate-x-1/2 h-[450px] w-[750px] opacity-45"

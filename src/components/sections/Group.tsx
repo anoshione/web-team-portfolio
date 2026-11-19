@@ -7,7 +7,7 @@ import { GroupListAnimation } from "@/components/animation/GroupListAnimation";
 
 export function Group() {
   return (
-    <section id="group" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+    <section id="group" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
       {/* Ambient neon aura */}
       <div
         className="ambient-neon-glow -bottom-36 -right-36 h-[500px] w-[500px] opacity-30"

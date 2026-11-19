@@ -11,7 +11,7 @@ import { ParticleFlow } from "@/components/animation/ParticleFlow";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36">
+    <section className="relative overflow-hidden pt-12 pb-14 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-[75px]">
       {/* 3D Animated Particle Flow - Reversed Trumpet Shape Confined to Hero */}
       <ParticleFlow />
 

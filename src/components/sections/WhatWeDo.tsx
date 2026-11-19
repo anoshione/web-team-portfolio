@@ -7,7 +7,7 @@ import { Spotlight } from "@/components/animation/Spotlight";
 
 export function WhatWeDo() {
   return (
-    <section id="what-we-do" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+    <section id="what-we-do" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-surface overflow-hidden">
       {/* Ambient neon aura */}
       <div
         className="ambient-neon-glow -top-36 -right-36 h-[500px] w-[500px] opacity-40"

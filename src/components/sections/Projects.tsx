@@ -12,7 +12,7 @@ export function Projects() {
   const otherProjects = featuredProjects.filter((p) => p.slug !== "promise-erp");
 
   return (
-    <section id="projects" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+    <section id="projects" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-bg overflow-hidden">
       {/* Ambient neon aura */}
       <div
         className="ambient-neon-glow -bottom-40 -left-40 h-[600px] w-[600px] opacity-35"

@@ -6,7 +6,7 @@ import { Marquee } from "@/components/animation/Marquee";
 
 export function Trust() {
   return (
-    <section id="trust" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+    <section id="trust" className="relative border-t border-white/[0.08] py-14 sm:py-16 lg:py-[70px] bg-surface overflow-hidden">
       {/* Ambient neon aura */}
       <div
         className="ambient-neon-glow -top-32 -left-32 h-[450px] w-[450px] opacity-30"

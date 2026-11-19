@@ -14,7 +14,7 @@ export function SectionLabel({ className, children, ...props }: SectionLabelProp
       )}
       {...props}
     >
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+      <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_8px_#22c55e,0_0_14px_#1F8A57]" />
       <span>{children}</span>
     </div>
   );

@@ -7,8 +7,13 @@ import { Spotlight } from "@/components/animation/Spotlight";
 
 export function WhatWeDo() {
   return (
-    <section id="what-we-do" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface">
-      <Container>
+    <section id="what-we-do" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+      {/* Ambient neon aura */}
+      <div
+        className="ambient-neon-glow -top-36 -right-36 h-[500px] w-[500px] opacity-40"
+        aria-hidden="true"
+      />
+      <Container className="relative z-10">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">02 / WHAT WE DO</SectionLabel>
@@ -16,7 +21,7 @@ export function WhatWeDo() {
           {/* Masked line reveal */}
           <SplitReveal
             as="h2"
-            className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl"
+            className="font-display text-[22px] font-bold tracking-tight text-ink sm:text-[28px] lg:text-[40px]"
           >
             Four ways we help your business.
           </SplitReveal>
@@ -27,14 +32,14 @@ export function WhatWeDo() {
           {services.map((service) => (
             <Spotlight
               key={service.number}
-              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-bg p-8 sm:p-10 transition-all duration-300 hover:border-accent hover:-translate-y-1"
+              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.08] bg-bg p-8 sm:p-10 transition-all duration-300 hover:border-accent hover:shadow-[0_0_35px_-5px_rgba(34,197,94,0.4),0_0_15px_-2px_rgba(31,138,87,0.3)] hover:-translate-y-1"
             >
               <div>
                 {/* Header: Masked Mono Number & Inline SVG Icon */}
                 <div className="flex items-center justify-between border-b border-white/[0.06] pb-6">
                   {/* Mono number sliding in from a mask */}
                   <div className="overflow-hidden">
-                    <span className="block font-mono text-3xl font-bold text-accent sm:text-4xl transition-transform duration-500 group-hover:scale-105">
+                    <span className="block font-mono text-2xl font-bold text-accent sm:text-3xl transition-transform duration-500 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(34,197,94,0.55)]">
                       {service.number}
                     </span>
                   </div>
@@ -108,7 +113,7 @@ export function WhatWeDo() {
                 </div>
 
                 {/* Service Title & Description */}
-                <h3 className="mt-6 font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">
+                <h3 className="mt-6 font-display text-[15px] font-bold tracking-tight text-ink sm:text-[18px]">
                   {service.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink/70 sm:text-base">

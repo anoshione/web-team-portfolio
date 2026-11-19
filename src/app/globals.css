@@ -43,17 +43,30 @@ textarea:focus-visible {
   outline-offset: 3px !important;
 }
 
-/* Faint CSS-only technical grid for hero background */
+/* Soft technical neon grid for hero background */
 .hero-grid {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(34, 197, 94, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 197, 94, 0.035) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
-/* Soft accent glow */
+/* Vivid multi-layered neon glow for hero */
 .hero-glow {
-  background: radial-gradient(circle 500px at 75% 35%, rgba(31, 138, 87, 0.14), transparent 70%);
+  background: 
+    radial-gradient(circle 750px at 70% 32%, rgba(34, 197, 94, 0.22), rgba(31, 138, 87, 0.12) 42%, transparent 75%),
+    radial-gradient(circle 500px at 20% 65%, rgba(31, 138, 87, 0.16), transparent 70%),
+    radial-gradient(circle 900px at 50% 50%, rgba(34, 197, 94, 0.06), transparent 85%);
+}
+
+/* Reusable ambient neon glow aura */
+.ambient-neon-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(100px);
+  z-index: 0;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.22) 0%, rgba(31, 138, 87, 0.10) 50%, transparent 75%);
 }
 
 /* FOUC prevention: hide [data-reveal] ONLY under html.js when motion is allowed */

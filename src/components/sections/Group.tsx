@@ -7,8 +7,13 @@ import { GroupListAnimation } from "@/components/animation/GroupListAnimation";
 
 export function Group() {
   return (
-    <section id="group" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
-      <Container>
+    <section id="group" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+      {/* Ambient neon aura */}
+      <div
+        className="ambient-neon-glow -bottom-36 -right-36 h-[500px] w-[500px] opacity-30"
+        aria-hidden="true"
+      />
+      <Container className="relative z-10">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">05 / PROMISE GROUP</SectionLabel>
@@ -16,7 +21,7 @@ export function Group() {
           {/* Masked line reveal */}
           <SplitReveal
             as="h2"
-            className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl"
+            className="font-display text-[22px] font-bold tracking-tight text-ink sm:text-[28px] lg:text-[40px]"
           >
             Part of a larger group.
           </SplitReveal>
@@ -43,14 +48,14 @@ export function Group() {
               )}
 
               {/* Row with hover state: text slides 12px right, arrow rotates -45 to 0, faint green wash */}
-              <div className="group-row group relative flex flex-col justify-between gap-4 p-6 sm:flex-row sm:items-center sm:p-8 transition-colors duration-400 ease-out hover:bg-accent/[0.04]">
+              <div className="group-row group relative flex flex-col justify-between gap-4 p-6 sm:flex-row sm:items-center sm:p-8 transition-all duration-400 ease-out hover:bg-accent/[0.06] hover:shadow-[0_0_25px_rgba(34,197,94,0.12)]">
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 transition-transform duration-400 ease-out group-hover:translate-x-3">
                   <span className="font-mono text-xs text-accent">
                     0{index + 1}
                   </span>
                   <div>
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-display text-lg font-bold text-ink sm:text-xl">
+                      <h3 className="font-display text-[14px] font-bold text-ink sm:text-[16px]">
                         {company.name}
                       </h3>
                       <span className="rounded-md border border-white/[0.06] bg-bg px-2 py-0.5 font-mono text-[10px] uppercase text-ink/50">

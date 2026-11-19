@@ -6,8 +6,13 @@ import { Marquee } from "@/components/animation/Marquee";
 
 export function Trust() {
   return (
-    <section id="trust" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
-      <Container>
+    <section id="trust" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+      {/* Ambient neon aura */}
+      <div
+        className="ambient-neon-glow -top-32 -left-32 h-[450px] w-[450px] opacity-30"
+        aria-hidden="true"
+      />
+      <Container className="relative z-10">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">04 / TRUSTED BY</SectionLabel>
@@ -15,7 +20,7 @@ export function Trust() {
           {/* Masked line reveal */}
           <SplitReveal
             as="h2"
-            className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl"
+            className="font-display text-[22px] font-bold tracking-tight text-ink sm:text-[28px] lg:text-[40px]"
           >
             Organizations that rely on our work.
           </SplitReveal>
@@ -26,7 +31,7 @@ export function Trust() {
       <div className="mt-14 w-full">
         <Marquee duration={28} className="py-2">
           {/* Slot 1: Department of Youth Development (Real) */}
-          <div className="flex h-24 w-56 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-center transition-colors hover:border-accent">
+          <div className="flex h-24 w-56 shrink-0 items-center justify-center rounded-xl border border-white/[0.08] bg-bg px-4 py-3 text-center transition-all duration-300 hover:border-accent hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]">
             <div className="space-y-1">
               <span className="block font-display text-xs font-bold uppercase tracking-wider text-ink sm:text-sm">
                 Department of

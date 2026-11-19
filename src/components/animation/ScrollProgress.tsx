@@ -38,7 +38,7 @@ export function ScrollProgress() {
   return (
     <div
       ref={barRef}
-      className="fixed top-0 left-0 right-0 z-50 h-[2px] w-full origin-left bg-accent pointer-events-none will-change-transform"
+      className="fixed top-0 left-0 right-0 z-50 h-[2.5px] w-full origin-left bg-accent shadow-[0_0_12px_#22c55e,0_0_24px_#1F8A57] pointer-events-none will-change-transform"
       style={{ transform: "scaleX(0)" }}
       aria-hidden="true"
     />

@@ -24,7 +24,7 @@ export function BrowserFrame({
   return (
     <div
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-2xl transition-all duration-300 hover:border-accent/40",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-2xl transition-all duration-300 hover:border-accent hover:shadow-[0_0_30px_-5px_rgba(34,197,94,0.35),0_0_12px_-2px_rgba(31,138,87,0.3)]",
         className
       )}
     >
@@ -59,7 +59,7 @@ export function BrowserFrame({
 
           {/* Right action / status indicator */}
           <div className="flex items-center gap-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_#22c55e,0_0_14px_#1F8A57]" />
             <span className="hidden font-mono text-[10px] uppercase tracking-wider text-ink/40 sm:inline">
               Active
             </span>

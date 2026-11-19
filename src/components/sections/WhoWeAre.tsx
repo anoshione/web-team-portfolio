@@ -8,8 +8,13 @@ import { Reveal } from "@/components/animation/Reveal";
 
 export function WhoWeAre() {
   return (
-    <section id="who-we-are" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
-      <Container>
+    <section id="who-we-are" className="relative border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+      {/* Ambient neon aura */}
+      <div
+        className="ambient-neon-glow -bottom-32 -left-32 h-96 w-96 opacity-40"
+        aria-hidden="true"
+      />
+      <Container className="relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Section Label & Heading */}
           <div className="lg:col-span-5">
@@ -20,7 +25,7 @@ export function WhoWeAre() {
             {/* Masked line reveal */}
             <SplitReveal
               as="h2"
-              className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl lg:text-5xl lg:leading-tight"
+              className="font-display text-[22px] font-bold tracking-tight text-ink sm:text-[28px] lg:text-[40px] lg:leading-tight"
             >
               A team that builds, runs and improves business software.
             </SplitReveal>

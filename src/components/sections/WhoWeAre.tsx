@@ -8,7 +8,7 @@ import { Reveal } from "@/components/animation/Reveal";
 
 export function WhoWeAre() {
   return (
-    <section id="who-we-are" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
+    <section id="who-we-are" className="scroll-mt-20 border-t border-white/[0.08] py-14 sm:py-18 lg:py-20 bg-bg">
       <Container size="wide">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Section Label & Heading */}
@@ -42,7 +42,7 @@ export function WhoWeAre() {
         </div>
 
         {/* Stats Row - Animated numerical count-up from 0 */}
-        <div className="mt-16 grid grid-cols-1 gap-6 border-t border-white/[0.08] pt-12 sm:grid-cols-3 lg:gap-8">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 gap-5 border-t border-white/[0.08] pt-8 sm:pt-10 sm:grid-cols-3 lg:gap-8">
           {/* Stat 1: Systems Built */}
           <Reveal delay={0.1}>
             <div className="rounded-2xl border border-white/[0.08] bg-surface p-6 sm:p-8 transition-colors hover:border-accent/40">

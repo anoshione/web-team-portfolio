@@ -95,7 +95,7 @@ export function ProjectGridAnimation({ children }: ProjectGridAnimationProps) {
   return (
     <div
       ref={gridRef}
-      className="mt-16 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 lg:[&_[data-project-tile]]:cursor-none"
+      className="mt-10 sm:mt-12 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8 lg:[&_[data-project-tile]]:cursor-none"
       data-project-grid
     >
       {children}

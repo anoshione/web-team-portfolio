@@ -7,7 +7,7 @@ import { Spotlight } from "@/components/animation/Spotlight";
 
 export function WhatWeDo() {
   return (
-    <section id="what-we-do" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface">
+    <section id="what-we-do" className="scroll-mt-20 border-t border-white/[0.08] py-14 sm:py-18 lg:py-20 bg-surface">
       <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>
@@ -23,7 +23,7 @@ export function WhatWeDo() {
         </div>
 
         {/* 2x2 Technical Grid with Staggered Entrance & Spotlight Effect */}
-        <Reveal y={40} stagger={0.12} className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+        <Reveal y={40} stagger={0.12} className="mt-10 sm:mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
           {services.map((service) => (
             <Spotlight
               key={service.number}

@@ -9,7 +9,7 @@ export function CtaBanner() {
   const mailtoAddress = siteConfig.contact.email.replace(/[\[\]]/g, "");
 
   return (
-    <section id="contact" className="scroll-mt-20 py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
+    <section id="contact" className="scroll-mt-20 py-14 sm:py-18 lg:py-20 bg-bg overflow-hidden">
       <Container size="wide">
         {/* Full-width rounded block with green accent - Expanding container animation */}
         <CtaBannerAnimation>

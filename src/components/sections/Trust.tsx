@@ -8,7 +8,7 @@ import { memberOrganizations } from "@/data/trust";
 
 export function Trust() {
   return (
-    <section id="trust" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+    <section id="trust" className="scroll-mt-20 border-t border-white/[0.08] py-14 sm:py-18 lg:py-20 bg-surface overflow-hidden">
       <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>
@@ -31,7 +31,7 @@ export function Trust() {
       </Container>
 
       {/* Infinite Velocity-Linked Marquee of Real Member & Partner Logos */}
-      <div className="mt-12 w-full">
+      <div className="mt-8 sm:mt-10 w-full">
         <Marquee duration={28} className="py-2">
           {memberOrganizations.map((org) => {
             const card = (
@@ -72,7 +72,7 @@ export function Trust() {
       <Container size="wide">
         {/* Beneath short line */}
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6 font-mono text-xs text-ink/50">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-5 font-mono text-xs text-ink/50">
             <span>Industry memberships: BASIS · NSDA · BACCO · BCS · Shomvob</span>
             <span>Public sector collaboration: Department of Youth Development</span>
           </div>

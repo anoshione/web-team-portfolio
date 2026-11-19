@@ -13,7 +13,7 @@ export function Projects() {
   const otherProjects = featuredProjects.filter((p) => p.slug !== "promise-erp");
 
   return (
-    <section id="projects" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
+    <section id="projects" className="scroll-mt-20 border-t border-white/[0.08] py-14 sm:py-18 lg:py-20 bg-bg">
       <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>

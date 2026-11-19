@@ -11,7 +11,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(
       <div
         ref={ref}
         className={cn(
-          "mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16",
+          "mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-10",
           size === "tight" && "max-w-4xl",
           (size === "default" || size === "wide") && "max-w-[1440px]",
           className

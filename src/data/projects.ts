@@ -346,7 +346,7 @@ export const projects: Project[] = [
       "Values-grounded academic institution providing ethical leadership training, professional certifications, and community learning programs.",
     url: "https://morallearningbd.com/",
     status: "Live",
-    featured: true,
+    featured: false,
     image: "/screenshots/moral-learning-1.webp",
     images: [
       "/screenshots/moral-learning-1.webp",

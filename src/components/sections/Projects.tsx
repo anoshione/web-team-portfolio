@@ -93,6 +93,7 @@ export function Projects() {
                     title="Promise ERP Operational Suite"
                     url="erp.promisegroup.net/dashboard"
                     image={erpProject.image}
+                    images={erpProject.images}
                     aspect="wide"
                   />
                 </div>
@@ -113,6 +114,7 @@ export function Projects() {
                   title={project.name}
                   url={project.url ? project.url : `${project.slug}.promise.internal`}
                   image={project.image}
+                  images={project.images}
                   aspect="video"
                 />
 

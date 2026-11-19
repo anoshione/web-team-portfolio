@@ -91,7 +91,12 @@ export function Hero() {
                   <BrowserFrame
                     title="Clickel Digital Agency"
                     url="clickeldigital.com"
-                    image="/screenshots/clickel-digital.webp"
+                    image="/screenshots/clickel-digital-1.webp"
+                    images={[
+                      "/screenshots/clickel-digital-1.webp",
+                      "/screenshots/clickel-digital-2.webp",
+                      "/screenshots/clickel-digital-3.webp",
+                    ]}
                     variant="compact"
                     aspect="video"
                   />
@@ -105,7 +110,12 @@ export function Hero() {
                   <BrowserFrame
                     title="Promise ERP Operations Dashboard"
                     url="erp.promisegroup.net/dashboard"
-                    image="/screenshots/promise-erp.jpg"
+                    image="/screenshots/promise-erp-1.webp"
+                    images={[
+                      "/screenshots/promise-erp-1.webp",
+                      "/screenshots/promise-erp-2.webp",
+                      "/screenshots/promise-erp-3.webp",
+                    ]}
                     aspect="video"
                   />
                 </Parallax>

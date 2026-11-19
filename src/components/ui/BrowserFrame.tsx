@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -5,21 +8,55 @@ export interface BrowserFrameProps {
   title?: string;
   url?: string;
   image?: string;
+  images?: string[];
   aspect?: "video" | "auto" | "wide";
   className?: string;
   variant?: "default" | "compact";
+  autoShuffle?: boolean;
 }
 
 export function BrowserFrame({
   title = "Promise System Console",
   url = "app.promise.internal",
   image,
+  images,
   aspect = "video",
   className,
   variant = "default",
+  autoShuffle = true,
 }: BrowserFrameProps) {
+  // Normalize image list
+  const imageList = (images && images.length > 0)
+    ? images
+    : (image ? [image] : []);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
   // Clean up URL for display
   const displayUrl = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+
+  // Automated shuffling effect across multiple screenshots
+  useEffect(() => {
+    if (!autoShuffle || imageList.length <= 1 || isHovered) {
+      if (timerRef.current) clearInterval(timerRef.current);
+      return;
+    }
+
+    // Add slight random initial offset so cards across grid don't tick in lockstep
+    const initialDelay = Math.floor(Math.random() * 1200);
+    const startTimeout = setTimeout(() => {
+      timerRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % imageList.length);
+      }, 3400);
+    }, initialDelay);
+
+    return () => {
+      clearTimeout(startTimeout);
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [autoShuffle, imageList.length, isHovered]);
 
   return (
     <div
@@ -27,10 +64,12 @@ export function BrowserFrame({
         "group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-surface shadow-2xl transition-all duration-300 hover:border-accent/40",
         className
       )}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="browser-frame-inner flex flex-col h-full w-full origin-center will-change-transform transition-transform duration-300 group-hover:scale-[1.02]">
+      <div className="browser-frame-inner flex flex-col h-full w-full origin-center will-change-transform transition-transform duration-300 group-hover:scale-[1.015]">
         {/* Browser Chrome Header */}
-        <div className="flex h-10 w-full items-center justify-between border-b border-white/[0.08] bg-bg/70 px-4 backdrop-blur-sm">
+        <div className="flex h-10 w-full items-center justify-between border-b border-white/[0.08] bg-bg/80 px-4 backdrop-blur-md">
           {/* Three dots / Window controls */}
           <div className="flex items-center gap-1.5" aria-hidden="true">
             <span className="h-2.5 w-2.5 rounded-full bg-white/[0.15]" />
@@ -61,7 +100,9 @@ export function BrowserFrame({
           <div className="flex items-center gap-1.5">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
             <span className="hidden font-mono text-[10px] uppercase tracking-wider text-ink/40 sm:inline">
-              Active
+              {imageList.length > 1
+                ? `Shot ${currentIndex + 1} of ${imageList.length}`
+                : "Active"}
             </span>
           </div>
         </div>
@@ -69,21 +110,65 @@ export function BrowserFrame({
         {/* Browser Window Body */}
         <div
           className={cn(
-            "relative w-full overflow-hidden bg-bg/50",
+            "relative w-full overflow-hidden bg-bg/50 select-none",
             aspect === "video" && "aspect-[16/10]",
             aspect === "wide" && "aspect-[16/9]",
             aspect === "auto" && "h-full min-h-[220px]"
           )}
         >
-          {/* REPLACE WITH REAL IMAGE: pass image prop (e.g. image="/screenshots/project.webp") */}
-          {image ? (
-            <Image
-              src={image}
-              alt={title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover object-top"
-            />
+          {imageList.length > 0 ? (
+            <>
+              {imageList.map((imgSrc, idx) => (
+                <div
+                  key={`${imgSrc}-${idx}`}
+                  className={cn(
+                    "absolute inset-0 transition-all duration-700 ease-in-out will-change-[opacity,transform]",
+                    idx === currentIndex
+                      ? "opacity-100 scale-100 z-10"
+                      : "opacity-0 scale-[1.03] pointer-events-none z-0"
+                  )}
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={`${title} - Screenshot ${idx + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top"
+                    priority={idx === 0}
+                  />
+                </div>
+              ))}
+
+              {/* Shuffling Dots Indicator Badge (Only shown if 2+ images) */}
+              {imageList.length > 1 && (
+                <div className="absolute bottom-3 right-3 z-20 flex items-center gap-1.5 rounded-full border border-white/10 bg-black/70 px-2.5 py-1 backdrop-blur-md shadow-lg transition-transform duration-200">
+                  <span className="font-mono text-[9px] uppercase tracking-wider text-accent font-semibold mr-0.5">
+                    Live Shots
+                  </span>
+                  {imageList.map((_, dotIdx) => (
+                    <button
+                      key={dotIdx}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        setCurrentIndex(dotIdx);
+                      }}
+                      className={cn(
+                        "h-1.5 rounded-full transition-all duration-300 cursor-pointer",
+                        dotIdx === currentIndex
+                          ? "w-4 bg-accent shadow-[0_0_8px_rgba(31,138,87,0.8)]"
+                          : "w-1.5 bg-white/30 hover:bg-white/60"
+                      )}
+                      aria-label={`Switch to screenshot ${dotIdx + 1}`}
+                    />
+                  ))}
+                  <span className="font-mono text-[9px] text-ink/50 ml-1">
+                    {currentIndex + 1}/{imageList.length}
+                  </span>
+                </div>
+              )}
+            </>
           ) : (
             /* Abstract Dashboard Skeleton */
             <div

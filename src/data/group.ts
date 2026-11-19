@@ -33,5 +33,6 @@ export const concernCompanies: ConcernCompany[] = [
     name: "e-Learning & Earning Ltd.",
     category: "Technology & Marketing",
     description: "Software engineering, custom web solutions, and digital growth services.",
+    url: "https://e-laeltd.com/",
   },
 ];

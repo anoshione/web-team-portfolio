@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 import { services } from "@/data/services";
 import { Container } from "@/components/ui/Container";
@@ -25,12 +26,13 @@ export function Footer() {
                 className="inline-flex items-center gap-2.5 transition-opacity hover:opacity-90"
                 aria-label="e-Learning & Earning Ltd. - Back to top"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-xs font-bold text-ink">
-                  P
-                </span>
-                <span className="font-display text-lg font-bold tracking-tight text-ink">
-                  {siteConfig.shortName}
-                </span>
+                <Image
+                  src="/images/logo.png"
+                  alt="e-Learning & Earning Ltd."
+                  width={180}
+                  height={33}
+                  className="h-8 w-auto object-contain"
+                />
               </Link>
               <p className="max-w-md text-sm leading-relaxed text-ink/60">
                 The internal software engineering and digital operations team of

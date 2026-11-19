@@ -58,12 +58,40 @@ export function Projects() {
                   <div className="pt-2 font-mono text-xs text-ink/40">
                     Centralizing enterprise workflows, automated reconciliations & departmental intelligence.
                   </div>
+
+                  {erpProject.url && (
+                    <div className="pt-4">
+                      <a
+                        href={erpProject.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link inline-flex items-center gap-2 rounded-xl border border-accent/40 bg-accent/10 px-4 py-2 font-mono text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-ink"
+                      >
+                        <span>Launch Interactive Prototype</span>
+                        <svg
+                          className="h-3.5 w-3.5 transition-transform duration-300 group-hover/link:translate-x-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 <div className="lg:col-span-7">
                   <BrowserFrame
                     title="Promise ERP Operational Suite"
                     url="erp.promisegroup.net/dashboard"
+                    image={erpProject.image}
                     aspect="wide"
                   />
                 </div>
@@ -83,6 +111,7 @@ export function Projects() {
                 <BrowserFrame
                   title={project.name}
                   url={project.url ? project.url : `${project.slug}.promise.internal`}
+                  image={project.image}
                   aspect="video"
                 />
 
@@ -91,6 +120,7 @@ export function Projects() {
                     {project.slug === "promise-crm" && "Sales & Relationship"}
                     {project.slug === "promise-mart" && "E-commerce"}
                     {project.slug === "promise-hotel-resort" && "Hospitality Management"}
+                    {project.slug === "promise-assets" && "Asset & Property"}
                     {project.slug === "dyd-ai" && "Artificial Intelligence"}
                   </span>
                   <span className="font-mono text-xs text-ink/40">

@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
   description:
     "We build the software and digital presence your business grows on. Enterprise systems, custom web solutions, and marketing automation.",
   siteUrl:
-    process.env.NEXT_PUBLIC_SITE_URL || "https://elearningandearning.com",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://e-laeltd.com",
   navLinks: [
     { label: "Who we are", href: "#who-we-are" },
     { label: "What we do", href: "#what-we-do" },
@@ -56,9 +56,9 @@ export const siteConfig: SiteConfig = {
     { label: "Group", href: "#group" },
   ],
   contact: {
-    email: "[contact@elearningandearning.com]",
-    phone: "[+880 1XXX-XXXXXX]",
-    address: "[Dhaka, Bangladesh]",
+    email: "info@e-laeltd.com",
+    phone: "+880 1550-666900",
+    address: "Khaja IT Park, 2nd to 7th Floor, Kallyanpur Bus Stop, Mirpur Road, Dhaka-1207, Bangladesh",
   },
   stats: {
     systemsBuilt: {

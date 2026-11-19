@@ -89,8 +89,9 @@ export function Hero() {
                   className="absolute top-0 right-0 sm:-right-2 w-11/12 opacity-40 blur-[0.5px] transition-transform duration-500 hover:opacity-60 hidden sm:block"
                 >
                   <BrowserFrame
-                    title="Promise ERP Operations"
-                    url="erp.promisegroup.net/dashboard"
+                    title="Promise Mart E-Commerce"
+                    url="promisemart.com"
+                    image="/screenshots/promise-mart.webp"
                     variant="compact"
                     aspect="video"
                   />
@@ -102,8 +103,9 @@ export function Hero() {
                   className="relative z-10 shadow-2xl transition-transform duration-300 hover:-translate-y-1 mt-8 sm:mt-10"
                 >
                   <BrowserFrame
-                    title="Promise Enterprise Console"
-                    url="console.promise.internal/analytics"
+                    title="Promise ERP Operations Dashboard"
+                    url="erp.promisegroup.net/dashboard"
+                    image="/screenshots/promise-erp.jpg"
                     aspect="video"
                   />
                 </Parallax>

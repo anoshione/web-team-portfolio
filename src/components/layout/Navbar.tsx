@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -109,17 +110,14 @@ export function Navbar() {
           className="group flex items-center gap-2.5 text-left transition-opacity hover:opacity-90"
           aria-label="e-Learning & Earning Ltd. - Home"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-xs font-bold text-ink">
-            P
-          </span>
-          <div className="flex flex-col">
-            <span className="font-display text-base font-bold tracking-tight text-ink sm:text-lg">
-              {siteConfig.shortName}
-            </span>
-            <span className="font-mono text-[10px] uppercase tracking-wider text-ink/40">
-              Promise Group Concern
-            </span>
-          </div>
+          <Image
+            src="/images/logo.png"
+            alt="e-Learning & Earning Ltd."
+            width={180}
+            height={33}
+            className="h-8 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

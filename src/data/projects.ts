@@ -190,13 +190,14 @@ export const projects: Project[] = [
   },
   {
     slug: "news-portal",
-    name: "News Portal",
+    name: "Captain's TV News Portal",
     category: "Media",
     description:
-      "Publishing platform featuring editorial workflows, dynamic article layout management, media hosting, and reader analytics.",
+      "24/7 digital sports and entertainment publishing portal featuring live match score updates, editorial publication workflow, and live streaming.",
     url: "https://captain-seven-xi.vercel.app/",
     status: "Live",
-    featured: false,
+    featured: true,
+    image: "/screenshots/captain-news.webp",
     stack: [],
     results: [],
   },

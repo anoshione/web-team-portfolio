@@ -82,3 +82,13 @@ textarea:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hide Next.js development overlay indicators and toast pills */
+nextjs-portal,
+[data-nextjs-dev-indicator],
+[data-nextjs-toast],
+#next-dev-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

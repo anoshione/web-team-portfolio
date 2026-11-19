@@ -87,7 +87,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${sora.variable} ${inter.variable}`}>
       <head>
         {/* FOUC Prevention: add 'js' class to html before paint */}
         <script
@@ -96,12 +96,14 @@ export default function RootLayout({
           }}
         />
         {/* Noscript fallback to unhide reveals if JS is disabled */}
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html:
-              "html.js [data-reveal] { opacity: 1 !important; transform: none !important; }",
-          }}
-        />
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                "html.js [data-reveal] { opacity: 1 !important; transform: none !important; }",
+            }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

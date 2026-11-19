@@ -15,6 +15,16 @@ export function Navbar() {
   const headerRef = useRef<HTMLElement>(null);
   const { scrollTo } = useSmoothScroll();
 
+  // Track scroll position reliably across all devices, reloads, and motion preferences
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   // Close mobile menu when screen resizes to desktop
   useEffect(() => {
     const handleResize = () => {
@@ -96,11 +106,16 @@ export function Navbar() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-40 w-full transition-all duration-300 will-change-transform ${
+      className={`sticky top-0 z-40 w-full transition-all duration-300 will-change-transform bg-[#0A0D0B]/95 backdrop-blur-md border-b ${
         isScrolled
-          ? "border-b border-white/[0.08] bg-bg/90 backdrop-blur-md shadow-lg"
-          : "border-b border-transparent bg-transparent backdrop-blur-none"
+          ? "border-white/[0.08] shadow-lg shadow-black/40"
+          : "border-white/[0.04]"
       }`}
+      style={{
+        backgroundColor: "rgba(10, 13, 11, 0.95)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}
     >
       <Container size="wide" className="flex h-18 items-center justify-between">
         {/* Wordmark Left */}

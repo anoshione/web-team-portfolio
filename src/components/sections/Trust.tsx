@@ -8,7 +8,7 @@ import { memberOrganizations } from "@/data/trust";
 
 export function Trust() {
   return (
-    <section id="trust" className="border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
+    <section id="trust" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
       <Container>
         <div className="max-w-3xl">
           <Reveal>

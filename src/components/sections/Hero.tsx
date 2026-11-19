@@ -7,10 +7,14 @@ import { Reveal } from "@/components/animation/Reveal";
 import { Parallax } from "@/components/animation/Parallax";
 import { Magnetic } from "@/components/animation/Magnetic";
 import { HeroAtmosphere } from "@/components/animation/HeroAtmosphere";
+import { ParticleFlow } from "@/components/animation/ParticleFlow";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36">
+      {/* 3D Animated Particle Flow - Reversed Trumpet Shape Confined to Hero */}
+      <ParticleFlow />
+
       <HeroAtmosphere>
         {/* Subtle CSS grid that drifts slowly */}
         <div
@@ -76,13 +80,13 @@ export function Hero() {
               </Reveal>
             </div>
 
-            {/* Right Column: Stacked, Offset BrowserFrames with Entrance and Parallax */}
+            {/* Right Column: Stacked, Offset BrowserFrames with ample top clearance (no cropping) */}
             <div className="relative lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="hero-mockup-stack relative w-full max-w-lg lg:max-w-none">
-                {/* Back Mockup: Speed -18 */}
+              <div className="hero-mockup-stack relative w-full max-w-lg lg:max-w-none pt-8 sm:pt-12">
+                {/* Back Mockup: Positioned within top clearance */}
                 <Parallax
-                  yPercent={-18}
-                  className="absolute -top-6 -right-3 w-11/12 opacity-40 blur-[0.5px] transition-transform duration-500 hover:opacity-60 hidden sm:block"
+                  yPercent={-10}
+                  className="absolute top-0 right-0 sm:-right-2 w-11/12 opacity-40 blur-[0.5px] transition-transform duration-500 hover:opacity-60 hidden sm:block"
                 >
                   <BrowserFrame
                     title="Promise ERP Operations"
@@ -92,10 +96,10 @@ export function Hero() {
                   />
                 </Parallax>
 
-                {/* Front Primary Mockup: Speed -8 */}
+                {/* Front Primary Mockup: Sits below back mockup with clean offset */}
                 <Parallax
-                  yPercent={-8}
-                  className="relative z-10 shadow-2xl transition-transform duration-300 hover:-translate-y-1"
+                  yPercent={-4}
+                  className="relative z-10 shadow-2xl transition-transform duration-300 hover:-translate-y-1 mt-8 sm:mt-10"
                 >
                   <BrowserFrame
                     title="Promise Enterprise Console"

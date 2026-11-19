@@ -32,7 +32,7 @@ export function HeroAtmosphere({ children }: HeroAtmosphereProps) {
         });
       }
 
-      // 2. Green radial glow breathes (opacity 0.5 to 0.8, 6s yoyo)
+      // 2. Green radial glow breathes (opacity 0.45 to 0.8, 6s yoyo)
       const glow = container.querySelector(".hero-glow-breathe");
       if (glow) {
         gsap.fromTo(
@@ -48,21 +48,21 @@ export function HeroAtmosphere({ children }: HeroAtmosphereProps) {
         );
       }
 
-      // 3. BrowserFrames entrance clip-path reveal + scale 1.08 to 1
+      // 3. BrowserFrames smooth entrance (scale & opacity with zero clipping)
       const mockupStack = container.querySelector(".hero-mockup-stack");
       if (mockupStack) {
         gsap.fromTo(
           mockupStack,
           {
-            clipPath: "inset(15% 15% 15% 15% round 24px)",
-            scale: 1.08,
+            scale: 1.05,
+            y: 24,
             opacity: 0,
           },
           {
-            clipPath: "inset(0% 0% 0% 0% round 16px)",
             scale: 1,
+            y: 0,
             opacity: 1,
-            duration: 1.3,
+            duration: 1.2,
             ease: "expo.out",
             delay: 0.35,
           }

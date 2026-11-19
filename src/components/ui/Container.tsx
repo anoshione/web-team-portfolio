@@ -6,15 +6,14 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Container = forwardRef<HTMLDivElement, ContainerProps>(
-  ({ className, size = "default", children, ...props }, ref) => {
+  ({ className, size = "wide", children, ...props }, ref) => {
     return (
       <div
         ref={ref}
         className={cn(
           "mx-auto w-full px-5 sm:px-8 md:px-12 lg:px-16",
           size === "tight" && "max-w-4xl",
-          size === "default" && "max-w-7xl",
-          size === "wide" && "max-w-[1440px]",
+          (size === "default" || size === "wide") && "max-w-[1440px]",
           className
         )}
         {...props}

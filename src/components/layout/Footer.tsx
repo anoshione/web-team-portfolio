@@ -17,7 +17,7 @@ export function Footer() {
           {siteConfig.shortName}
         </div>
 
-        <Container className="relative z-10">
+        <Container size="wide" className="relative z-10">
           <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             {/* Brand & Mission Column */}
             <div className="footer-column lg:col-span-5 space-y-4">

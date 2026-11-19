@@ -8,7 +8,7 @@ import { Spotlight } from "@/components/animation/Spotlight";
 export function WhatWeDo() {
   return (
     <section id="what-we-do" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface">
-      <Container>
+      <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">02 / WHAT WE DO</SectionLabel>

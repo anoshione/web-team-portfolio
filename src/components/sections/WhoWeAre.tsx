@@ -9,7 +9,7 @@ import { Reveal } from "@/components/animation/Reveal";
 export function WhoWeAre() {
   return (
     <section id="who-we-are" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
-      <Container>
+      <Container size="wide">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Section Label & Heading */}
           <div className="lg:col-span-5">

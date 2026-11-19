@@ -10,7 +10,7 @@ export function CtaBanner() {
 
   return (
     <section id="contact" className="scroll-mt-20 py-20 sm:py-28 lg:py-32 bg-bg overflow-hidden">
-      <Container>
+      <Container size="wide">
         {/* Full-width rounded block with green accent - Expanding container animation */}
         <CtaBannerAnimation>
           {/* Subtle inner grid accent */}

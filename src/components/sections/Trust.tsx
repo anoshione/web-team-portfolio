@@ -9,7 +9,7 @@ import { memberOrganizations } from "@/data/trust";
 export function Trust() {
   return (
     <section id="trust" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-surface overflow-hidden">
-      <Container>
+      <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">04 / TRUST & AFFILIATIONS</SectionLabel>
@@ -69,7 +69,7 @@ export function Trust() {
         </Marquee>
       </div>
 
-      <Container>
+      <Container size="wide">
         {/* Beneath short line */}
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.06] pt-6 font-mono text-xs text-ink/50">

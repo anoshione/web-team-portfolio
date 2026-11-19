@@ -14,7 +14,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="scroll-mt-20 border-t border-white/[0.08] py-20 sm:py-28 lg:py-32 bg-bg">
-      <Container>
+      <Container size="wide">
         <div className="max-w-3xl">
           <Reveal>
             <SectionLabel className="mb-4">03 / SELECTED WORK</SectionLabel>

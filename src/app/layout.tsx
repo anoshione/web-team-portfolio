@@ -5,6 +5,7 @@ import { SmoothScrollProvider } from "@/components/animation/SmoothScroll";
 import { IntroOverlay } from "@/components/animation/IntroOverlay";
 import { ScrollProgress } from "@/components/animation/ScrollProgress";
 import { Cursor } from "@/components/animation/Cursor";
+import { ParticleFlow } from "@/components/animation/ParticleFlow";
 import "./globals.css";
 
 const sora = Sora({
@@ -119,6 +120,8 @@ export default function RootLayout({
           <IntroOverlay />
           <ScrollProgress />
           <Cursor />
+          {/* Animated 3D Particle Flow (Reversed Trumpet Funnel in Hero + Continuous Downward Central Column) */}
+          <ParticleFlow />
           {children}
         </SmoothScrollProvider>
       </body>

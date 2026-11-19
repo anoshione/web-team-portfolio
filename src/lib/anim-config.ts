@@ -5,4 +5,5 @@ export const ANIM = {
   magnetic: true,
   marquee: true,
   parallax: true,
+  particles: true,
 };

@@ -125,12 +125,23 @@ export function Projects() {
 
                   <div className="flex items-center justify-between pt-2">
                     <span className="rounded-md border border-white/[0.08] bg-bg px-2.5 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-accent">
-                      {project.slug === "promise-crm" && "Sales & Relationship"}
-                      {project.slug === "promise-mart" && "E-commerce"}
-                      {project.slug === "promise-hotel-resort" && "Hospitality Management"}
-                      {project.slug === "promise-assets" && "Asset & Property"}
-                      {project.slug === "dyd-ai" && "Artificial Intelligence"}
-                      {project.slug === "news-portal" && "Media & Live News"}
+                      {project.slug === "clickel-digital"
+                        ? "Web Solutions & Agency"
+                        : project.slug === "promise-mart"
+                        ? "E-commerce"
+                        : project.slug === "promise-hotel-resort"
+                        ? "Hospitality Management"
+                        : project.slug === "promise-assets"
+                        ? "Asset & Property"
+                        : project.slug === "dyd-ai"
+                        ? "Artificial Intelligence"
+                        : project.slug === "promise-haven-city"
+                        ? "Smart Township"
+                        : project.slug === "ajker-dainik"
+                        ? "National News Media"
+                        : project.slug === "news-portal"
+                        ? "Media & Live Sports"
+                        : project.category}
                     </span>
                     <span className="font-mono text-xs text-ink/40">
                       {project.status}

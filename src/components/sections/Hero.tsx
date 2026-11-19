@@ -89,9 +89,9 @@ export function Hero() {
                   className="absolute top-0 right-0 sm:-right-2 w-11/12 opacity-40 blur-[0.5px] transition-transform duration-500 hover:opacity-60 hidden sm:block"
                 >
                   <BrowserFrame
-                    title="Promise Mart E-Commerce"
-                    url="promisemart.com"
-                    image="/screenshots/promise-mart.webp"
+                    title="Clickel Digital Agency"
+                    url="clickeldigital.com"
+                    image="/screenshots/clickel-digital.webp"
                     variant="compact"
                     aspect="video"
                   />
